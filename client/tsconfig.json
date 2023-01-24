@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig-base.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ES2018"],
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./public/dist",
+    "baseUrl": "./client",
+    "paths": {
+      // FIX: until IDE can autofill yarn link paths
+      "@app/client/*": ["src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src/**/*", "webpack.config.ts"]
+}

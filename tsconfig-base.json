@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "incremental": true,
+    "strict": true,
+    "importsNotUsedAsValues": "error",
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "client",
+  "description": "Hi",
+  "author": "Simon Podlipsky <simon@podlipsky.net>",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@app/client": "link:./src",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10"
+  },
+  "private": true
+}
