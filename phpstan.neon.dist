@@ -1,0 +1,10 @@
+parameters:
+    level: max
+    parallel:
+        maximumNumberOfProcesses: 4
+
+    stubFiles:
+        - phpstubs/Azjezz/Psl/Result/ResultInterface.php.stub
+
+    paths:
+        - %currentWorkingDirectory%/src

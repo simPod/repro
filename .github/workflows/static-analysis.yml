@@ -1,0 +1,42 @@
+name: "Static Analysis"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+
+jobs:
+  static-analysis-phpstan:
+    name: "Static Analysis with PHPStan"
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-version:
+          - "8.2"
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Install dependencies with Composer"
+        uses: "ramsey/composer-install@v2"
+
+      - name: "First run fails"
+        run: "vendor/bin/phpstan || true"
+
+      - name: "Second run is cached and ok"
+        run: "vendor/bin/phpstan"
+
+      - name: "Let's fail"
+        run: |
+          vendor/bin/phpstan clear-result-cache
+          vendor/bin/phpstan
